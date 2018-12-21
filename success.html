@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Success</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sucess" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- //css-login files -->
+</head>
+<body>
+<div class="container">
+    <div class="row" style="text-align: center">
+        <h2>Service Registered Successfully</h2>
+        <img style="max-width: 30%;max-height: 30%;" src="images/success.png" alt="success">
+        <h3>Your Service has been booked successfully, you'll receive booking confirmation on your registered Email</h3>
+        <h4>You'll be redirected to your booking history in <span id="progressBar"></span> seconds.....</h4>
+
+    </div>
+</div>\
+</body>
+</html>
+<script>
+    (function () {
+        console.log(1111);
+        var timeleft = 0;
+        var downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").innerText = 10 - timeleft++;
+            if(timeleft == 10)
+                location.href="/profile";
+        },1000);
+    })();
+</script>

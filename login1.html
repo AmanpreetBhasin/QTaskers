@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Glassy Login Form A Responsive Widget Template :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Glassy Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css-login files -->
+<link rel="stylesheet" href="css-login/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link rel="stylesheet" href="css-login/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+<!-- //css-login files -->
+<!-- web-fonts-login -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700" rel="stylesheet">
+<!-- //web-fonts-login -->
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Pacifico|Rock+Salt|Sigmar+One" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+                <span><a class="navbar-brand" href="../">Qtaskers</a></span>
+    </nav>
+		<!--header-->  
+		<div class="header-w3l">
+			<h1>Service Provider Login Portal</h1>
+		</div>
+		<!--//header-->
+	<div id="ajax-loader" class="overlay hide">
+	</div>
+		<!--main-->
+		<div class="main-w3layouts-agileinfo">
+	           <!--form-stars-here-->
+                
+						<div class="wthree-form">
+							<h2>Fill out the form below to login</h2>
+							<form action="#" method="post">
+								<div class="form-sub-w3">
+									<input type="email" id="email" name="Email Id" placeholder="Email_Id " required="" />
+								<div class="icon-w3">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								</div>
+								<div class="form-sub-w3">
+									<input type="password" name="Password" id="pass" placeholder="Password" required="" />
+								<div class="icon-w3">
+									<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+								</div>
+								</div>
+								<label class="anim">
+								<input type="checkbox" class="checkbox">
+									<span>Remember Me</span> 
+									<a href="#">Forgot Password</a>
+								</label> 
+								<div class="clear"></div>
+								<div class="submit-agileits">
+									<input type="button" value="Login" onclick="loginUser()">
+								</div>
+                                <div class="register"><span class="anim"><a href="../register">Not registered. Sign Up here.</a></span><br>
+								<span class="anim"><a href="../login">Login as Customer</a></span></div>
+							</form>
+
+						</div>
+				<!--//form-ends-here-->
+
+		</div>
+</body>
+</html>
+
+<script>
+    function loginUser()
+    {
+        document.getElementById("ajax-loader").classList.remove("hide");
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("pass").value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.response=="Success")
+                {
+                    document.getElementById("ajax-loader").classList.add("hide");
+                    location.href = "/";
+                }
+                else
+                {
+                    document.getElementById("ajax-loader").classList.add("hide");
+                    alert(this.response);
+                }
+            }
+        };
+        xmlhttp.open("GET", "/checkProviderLogin?emailUsername="+email+"&password="+password, true);
+        xmlhttp.send();
+    }
+</script>

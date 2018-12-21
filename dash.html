@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+<title>Qtaskers|Online service provider|Book a plumber|Book an electrician|Find a service Qtaskers:Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Qtaskers|Online service provider|Book a plumber|Book an electrician|Find a service Qtaskers" />
+
+<!-- flexslider-css-login-file -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- //flexslider-css-login-file -->
+
+<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+
+<link href="css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons-css-login-file -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">	<!-- bootstrap-css-login-file -->
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">	<!-- style-css-login-file -->
+<!-- gallery -->
+<link rel="stylesheet" href="css/lightbox.css">
+<!-- //gallery -->
+
+<!-- fonts-login -->
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Pacifico|Rock+Salt|Sigmar+One" rel="stylesheet">
+ <!-- //fonts-login -->
+ 
+<!-- Default-JavaScript-File -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //Default-JavaScript-File -->
+	
+<script src="js/bootstrap.js"></script>	<!-- //bootstrap-JavaScript-File -->
+</head>
+<!-- Head -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- banner --> 
+		<!-- header -->
+			<!-- Navigation -->
+	<div>
+			<nav class="navbar navbar-default navbar-fixed-top" style="background: rgba(0, 0, 0, 0.3)"> 
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Qtaskers</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="../">Qtaskers</a></h1>
+					</div> 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right cl-effect-15">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+							<li><a class="page-scroll sign" href="../profile">Profile</a></li>
+							<!--<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a class="page-scroll scroll" href="#laboratories"></a></li>
+									<li><a class="page-scroll scroll" href="#testimonials">Testimonials</a></li>
+								</ul>
+							</li>-->
+							<li><a class='sign' href='../logout'>Log Out</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>
+	</div>
+		<div class="clearfix clear"></div>
+
+			<div class="container" style="padding-top: 150px;padding-bottom: 50px;">
+				<form>
+					<div class="form-group">
+						<label id="category">Select the service category : </label>
+						<br>
+						<select style="font-size: 1.5em;height: auto;" onchange="serviceSelect()" class="form-control" id="serviceInputType">
+							<option value="null" selected disabled>Select the type of service</option>
+							<option value="ss">Software Solutions</option>
+							<option value="dn">Daily Needs</option>
+							<option value="ti">Tutors and Instructors</option>
+							<option value="bc">Builders and Constructors</option>
+							<option value="brs">Business Related Services</option>
+							<option value="ls">Logistics Services</option>
+							<option value="hrs">Health Related Services</option>
+						</select>
+						<br>
+						<br>
+						<div id="serviceDivName">
+						<label id="category">Select the Service from the sublist : </label>
+						<br>
+						<select style="font-size: 1.5em;height: auto;" class="form-control" id="serviceInputName">
+							<option value="null" selected disabled>Please select the service category first</option>
+						</select>
+						</div>
+						<br>
+					</div>
+					<br>
+					<button type="button" class="btn btn-success btn-lg center-block" onclick="searchProvider()">Search Available Service Providers</button>
+				</form>
+			</div>
+	<div class="container" id="serviceProvidersDiv">
+
+	</div>
+	<div class="w3l_banner_info" style="padding-top: 70px;padding-bottom : 70px">
+		<div class="container">
+
+		</div>
+	</div>
+<!-- copyright -->
+<div class="copyright-agile">
+	<p>&copy; 2017 Qtaskers. All rights reserved</p>
+</div>
+		
+<script src="js/easy-responsive-tabs.js"></script>
+	<script>
+        function serviceSelect()
+        {
+            document.getElementById("serviceInputName").innerHTML="<option value=\"null\" selected disabled>Select Service Name</option>";
+            document.getElementById("serviceDivName").classList.remove("hide");
+            if(document.getElementById("serviceInputType").value=="ss")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Web Development";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Mobile App Development";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Hybrid Development";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Automation and Testing";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+            else if(document.getElementById("serviceInputType").value=="dn")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Electrician";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Plumber";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Carpenter";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Laundry";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Cleaning and Pest Control";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Grocery";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+            else if(document.getElementById("serviceInputType").value=="ti")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Academics";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Sports";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Dance and Music";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Gym and Zumba";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Driving";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+            else if(document.getElementById("serviceInputType").value=="bc")
+            {
+                document.getElementById("serviceDivName").classList.add("hide");
+            }
+            else if(document.getElementById("serviceInputType").value=="brs")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Consultants";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Brokers and Agents";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Advertisers/Publishers";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Financial Services";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+            else if(document.getElementById("serviceInputType").value=="ls")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Warehousing Services";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Packers and Movers";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Rail and Air Logistics";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Event Organizers";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Interiors and Decorators";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+            else if(document.getElementById("serviceInputType").value=="hrs")
+            {
+                var x = document.getElementById("serviceInputName");
+                var option = document.createElement("option");
+                option.text = "Blood Bank Services";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Organ Bank Services";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Pharmacy";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Emergency Ambulance Services";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Physician";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Dietician";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Nurse and patient attendants";
+                x.add(option);
+                var option = document.createElement("option");
+                option.text = "Others";
+                x.add(option);
+            }
+
+        }
+
+        function searchProvider()
+        {
+            document.getElementById("serviceProvidersDiv").innerHTML="";
+            var st=document.getElementById("serviceInputType").value;
+            var s=document.getElementById("serviceInputName").value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonString=JSON.parse(this.response);
+                    if(jsonString.length!=0) {
+                        for (i = 0; i < jsonString.length; i++) {
+                            var email = jsonString[i].email;
+                            var phno = jsonString[i].phoneNumber;
+                            var spid = jsonString[i].spid;
+                            var name = jsonString[i].fullName;
+                            var serviceName = jsonString[i].serviceName;
+                            document.getElementById("serviceProvidersDiv").innerHTML += "<div class=row\">\n" +
+                                "\t\t\t<div class=\"card\" style=\"margin-top: 1em\">\n" +
+                                "\t\t\t\t<div class=\"left-text-div\">\n" +
+                                "\t\t\t\t\t<button onclick=\"book(this.id)\"id=\"" + spid + "\"style=\"margin: 50px 30px\"class=\"btn-success btn btn-lg\">Book Now</button>\n" +
+                                "\t\t\t\t</div>\n" +
+                                "\t\t\t\t<div class=\"right-text-div\">\n" +
+                                "\t\t\t\t\t<h3><b>" + name + "</b></h3>\n" +
+                                "\t\t\t\t\t<h4>" + serviceName + "</h4>\n" +
+                                "\t\t\t\t\t<h5 class='text-success'>Service Provider Id : " + spid + "</h5>\n" +
+                                "\t\t\t\t</div>\n" +
+                                "\t\t\t\t<div class=\"clearfix\"></div>\n" +
+                                "\t\t\t</div>\n" +
+                                "\t\t</div>"
+                        }
+                    }
+                    else
+                    {
+                        alert("Sorry! No service provider is available yet for this service");
+                    }
+                }
+            };
+            xmlhttp.open("GET", "/getServiceProviders?serviceType="+st+"&service="+s, true);
+            xmlhttp.send();
+        }
+
+        function book(id)
+		{
+		    location.href="/bookNow?id="+id;
+		}
+	</script>
+<script>
+$(document).ready(function () {
+$('#horizontalTab').easyResponsiveTabs({
+type: 'default', //Types: default, vertical, accordion           
+width: 'auto', //auto or any width like 600px
+fit: true,   // 100% fit in a container
+closed: 'accordion', // Start closed if in accordion view
+activate: function(event) { // Callback function if tab is switched
+var $tab = $(this);
+var $info = $('#tabInfo');
+var $name = $('span', $info);
+$name.text($tab.text());
+$info.show();
+}
+});
+$('#verticalTab').easyResponsiveTabs({
+type: 'vertical',
+width: 'auto',
+fit: true
+});
+});
+</script>
+
+
+
+
+
+<!--banner Slider starts Here-->
+		<script src="js/responsiveslides.min.js"></script>
+							<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:true,
+									nav:false,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							 </script>
+
+							<!--banner Slider starts Here-->
+							<!--start-date-piker-->
+							<link rel="stylesheet" href="css/jquery-ui.css" />
+									<script src="js/jquery-ui.js"></script>
+									<script>
+										$(function() {
+										$( "#datepicker" ).datepicker();
+										});
+									</script>
+							<!--/End-date-piker-->
+							
+<!-- js for smooth scrollings -->
+	<script src="js/SmoothScroll.min.js"></script>
+<!-- js for smooth scrollings -->
+
+<!-- flexisel -->
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 3,
+				animationSpeed: 1000,
+				autoPlay: false,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 1
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems:2
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			
+		});
+	</script>
+<!-- //flexisel -->
+
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+
+
+<!-- Scrolling Nav JavaScript --> 
+    <script src="js/scrolling-nav.js"></script>  
+<!-- //fixed-scroll-nav-js --> 

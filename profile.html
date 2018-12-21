@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+    <title>Qtaskers|Online service provider|Book a plumber|Book an electrician|Find a service Qtaskers:Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Qtaskers|Online service provider|Book a plumber|Book an electrician|Find a service Qtaskers" />
+
+    <!-- flexslider-css-login-file -->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+    <!-- //flexslider-css-login-file -->
+
+    <link rel="stylesheet" href="css/easy-responsive-tabs.css">
+
+    <link href="css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons-css-login-file -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">	<!-- bootstrap-css-login-file -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">	<!-- style-css-login-file -->
+
+
+    <!-- gallery -->
+    <link rel="stylesheet" href="css/lightbox.css">
+    <!-- //gallery -->
+
+    <!-- fonts-login -->
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Pacifico|Rock+Salt|Sigmar+One" rel="stylesheet">
+    <!-- //fonts-login -->
+
+    <!-- Default-JavaScript-File -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!-- //Default-JavaScript-File -->
+
+    <script src="js/bootstrap.js"></script>	<!-- //bootstrap-JavaScript-File -->
+
+</head>
+<!-- Head -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- banner -->
+<!-- header -->
+<!-- Navigation -->
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background: rgba(0, 0, 0, 0.3)">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Qtaskers</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="../">Qtaskers</a></h1>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right cl-effect-15">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
+                    <li><a class="page-scroll sign" href="../dashboard">Book a Service</a></li>
+                    <!--<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="page-scroll scroll" href="#laboratories"></a></li>
+                            <li><a class="page-scroll scroll" href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </li>-->
+                    <li><a class='sign' href='../logout'>Log Out</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</div>
+<div class="w3l_banner_info" style="padding-top: 70px;padding-bottom : 70px">
+    <div class="container">
+        <div class="horizontalTab" id="horizontalTab">
+            <ul class="resp-tabs-list list-group">
+                <li class="list-group-item text-center">Booking History</li>
+                <li class="list-group-item text-center">Account Details</li>
+            </ul>
+            <div class="resp-tabs-container">
+                <div class="bhoechie-tab-content active">
+                    <div class="services-grids">
+                        <div class="ser-info ser-info-dash">
+                            <h3 style="padding-bottom: 2em">See your booking details below</h3>
+                            <div class="table-responsive">
+                                <table style="font-size: 1.2em" class="table table-striped" id="historyTable">
+                                    <tbody>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Service Name</th>
+                                        <th>Service Provider</th>
+                                        <th>Contact Number</th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- section -->
+                <div class="bhoechie-tab-content">
+                    <div class="services-grids">
+                        <div class="ser-info ser-info-dash">
+                            <h3 style="padding-bottom: 2em"> See your account details below</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tbody style="font-size: 1.2em">
+                                    <tr>
+                                        <th scope="row">Name : </th>
+                                        <td id="fullName">Amanpreet Singh Bhasin</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email Id : </th>
+                                        <td id="email">amanpreetsingh8855@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone Number : </th>
+                                        <td id="phoneNumber">+91 9599134336</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address : </th>
+                                        <td id="address">92/3, Industrial Colony, Govind Nagar, Kanpur Nagar, UP 208006</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!--  section -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- copyright -->
+<div class="copyright-agile">
+    <p>&copy; 2017 Qtaskers. All rights reserved</p>
+</div>
+<script>
+    (function () {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonString=JSON.parse(this.response);
+                    console.log(jsonString)
+                    var fullName=jsonString.fullName;
+                    var email=jsonString.email;
+                    var phoneNumber=jsonString.phoneNumber;
+                    var address=jsonString.address;
+                    var history=jsonString.history;
+                    document.getElementById("fullName").innerHTML=fullName;
+                    document.getElementById("email").innerHTML=email;
+                    document.getElementById("phoneNumber").innerHTML=phoneNumber;
+                    document.getElementById("address").innerHTML=address;
+                    for(i=0;i<history.length;i++)
+                    {
+                        var date=history[i].dateOfBooking;
+                        var service=history[i].serviceName;
+                        var spName=history[i].spName;
+                        var spPhoneNumber=history[i].spPhoneNumber;
+
+                        var table = document.getElementById("historyTable");
+                        var row=table.insertRow(1);
+                        var cell1=row.insertCell(0);
+                        var cell2=row.insertCell(1);
+                        var cell3=row.insertCell(2);
+                        var cell4=row.insertCell(3);
+                        cell1.innerHTML=date;
+                        cell2.innerHTML=service;
+                        cell3.innerHTML=spName;
+                        cell4.innerHTML=spPhoneNumber;
+
+                    }
+                }
+            };
+            xmlhttp.open("GET", "/accountDetails", true);
+            xmlhttp.send();
+    })();
+
+</script>
+
+
+
+
+
+
+
+<script src="js/easy-responsive-tabs.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+
+
+
+
+
+<!--banner Slider starts Here-->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager:true,
+            nav:false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+
+<!--banner Slider starts Here-->
+<!--start-date-piker-->
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+</script>
+<!--/End-date-piker-->
+
+<!-- js for smooth scrollings -->
+<script src="js/SmoothScroll.min.js"></script>
+<!-- js for smooth scrollings -->
+
+<!-- flexisel -->
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#flexiselDemo1").flexisel({
+            visibleItems: 3,
+            animationSpeed: 1000,
+            autoPlay: false,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems:2
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+
+    });
+</script>
+<!-- //flexisel -->
+
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smooth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+
+
+<!-- Scrolling Nav JavaScript -->
+<script src="js/scrolling-nav.js"></script>
+<!-- //fixed-scroll-nav-js -->

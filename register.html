@@ -1,0 +1,335 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Account Register</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Account Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css-login files -->
+<link rel="stylesheet" href="css-register/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+<link rel="stylesheet" href="css-register/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Pacifico|Rock+Salt|Sigmar+One" rel="stylesheet">
+<!-- //css-login files -->
+</head>
+<body>
+<!-- main -->
+    <nav class="navbar">
+                <span><a class="navbar-brand" href="../">Qtaskers</a></span>
+    </nav>
+
+<div class="w3ls-header">
+	<div class="header-main">
+		<h2>Create Account</h2>
+			<div class="header-bottom">
+				<div class="header-right w3agile">
+					<div class="header-left-bottom agileinfo">
+						<form id="formRegister" action="#" method="post">
+							<div class="icon1">
+								<i class="fa fa-user" aria-hidden="true"></i>
+								<input  type="text" placeholder="Your Full Name" name="fullName" required=""/>
+							</div>
+							<div class="icon1">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<input id="emailID" onblur="validate()" type="email" placeholder="Your Email" name="email" required=""/>
+							</div>
+							<div class="icon1">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								<input type="tel" maxlength="10" placeholder="Phone Number" name="phoneNumber" required=""/>
+							</div>
+							<div class="icon1">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+								<input type="password" placeholder="Password" name="password" required=""/>
+							</div>
+                            <div class="icon1">
+								<i class="fa fa-book" aria-hidden="true"></i>
+								<input type="text" placeholder="Address" name="address" required=""/>
+							</div>
+							<div class="form-group icon1 hide" id="serviceDivType">
+								<i class="fa fa-search" aria-hidden="true"></i>
+								<select class="form-control" onchange="serviceSelect()" id="serviceInputType" placeholder="Service Type" name="serviceType" required="">
+									<option value="null" selected disabled>Select the type of service</option>
+									<option value="ss">Software Solutions</option>
+									<option value="dn">Daily Needs</option>
+									<option value="ti">Tutors and Instructors</option>
+									<option value="bc">Builders and Constructors</option>
+									<option value="brs">Business Related Services</option>
+									<option value="ls">Logistics Services</option>
+									<option value="hrs">Health Related Services</option>
+								</select>
+							</div>
+							<div class="form-group icon1 hide" id="serviceDivName">
+								<i class="fa fa-search-plus" aria-hidden="true"></i>
+								<select class="form-control" onchange="serviceOther()" id="serviceInputName" placeholder="Service Name" name="service" required="">
+									<option value="null" disabled selected>Select Service Type First</option>
+								</select>
+							</div>
+							<div class="icon1 hide" id="serviceDivText">
+								<i class="fa fa-search-plus" aria-hidden="true"></i>
+								<input type="text" id="serviceInputText" placeholder="Service Name" name="serviceText" required=""/>
+							</div>
+							<div class="radio icon1">
+							  <label class="checkbox"><input type="radio" id=customer" name="userType" required="" checked onchange="servicefunction()">Register as Customer</label>
+								<label class="checkbox"><input type="radio" id="serviceProvider" name="userType" required="" onchange="servicefunction()">Register as Service Provider</label>
+							</div>
+							<div class="login-check">
+								 <label class="checkbox"><input type="checkbox" name="checkbox" unchecked required=""><i> </i> I Accept to the <a href="#">Terms &amp; Conditions</a></label>
+							</div>
+							<div class="bottom">
+								<input type="button" onclick="register()" value="Create account" />
+							</div>
+							<div class="social w3layouts">
+								<!--<div class="heading">
+									<h5>Or signin with :</h5>
+									<div class="clear"></div>
+								</div>
+								<!--<div class="icons">
+									<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+									<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+									<a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+									<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+
+									<div class="clear"></div>
+								</div>-->
+								<div class="clear"></div>
+								<p>Already a member? <a href="../login">Signin</a></p>
+							</div>
+					</form>	
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<!--header end here-->
+<!-- copyright start here
+<div class="copyright">
+	<p>© 2017 Account Register Form. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>
+<!--copyright end here-->
+</body>
+</html>
+
+<script>
+	function servicefunction(){
+		if(document.getElementById("serviceProvider").checked)
+		{
+			document.getElementById("serviceDivType").classList.remove("hide");
+            document.getElementById("serviceDivName").classList.remove("hide");
+		}
+		else
+		{
+			document.getElementById("serviceDivType").classList.add("hide");
+            document.getElementById("serviceDivName").classList.add("hide");
+		}
+	}
+	function serviceSelect()
+	{
+	    document.getElementById("serviceInputName").innerHTML="";
+        document.getElementById("serviceDivName").classList.remove("hide");
+	    if(document.getElementById("serviceInputType").value=="ss")
+		{
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Web Development";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Mobile App Development";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Hybrid Development";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Automation and Testing";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+		}
+		else if(document.getElementById("serviceInputType").value=="dn")
+		{
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Electrician";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Plumber";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Carpenter";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Laundry";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Cleaning and Pest Control";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Grocery";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+		}
+        else if(document.getElementById("serviceInputType").value=="ti")
+        {
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Academics";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Sports";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Dance and Music";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Gym and Zumba";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Driving";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+        }
+        else if(document.getElementById("serviceInputType").value=="bc")
+        {
+            document.getElementById("serviceDivName").classList.add("hide");
+        }
+        else if(document.getElementById("serviceInputType").value=="brs")
+        {
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Consultants";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Brokers and Agents";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Advertisers/Publishers";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Financial Services";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+        }
+        else if(document.getElementById("serviceInputType").value=="ls")
+        {
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Warehousing Services";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Packers and Movers";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Rail and Air Logistics";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Event Organizers";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Interiors and Decorators";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+        }
+        else if(document.getElementById("serviceInputType").value=="hrs")
+        {
+            var x = document.getElementById("serviceInputName");
+            var option = document.createElement("option");
+            option.text = "Blood Bank Services";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Organ Bank Services";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Pharmacy";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Emergency Ambulance Services";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Physician";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Dietician";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Nurse and patient attendants";
+            x.add(option);
+            var option = document.createElement("option");
+            option.text = "Others";
+            x.add(option);
+        }
+
+	}
+	function serviceOther(){
+        if(document.getElementById("serviceInputName").value=="Others")
+		{
+            document.getElementById("serviceDivText").classList.remove("hide");
+		}
+		else
+		{
+            document.getElementById("serviceDivText").classList.add("hide");
+		}
+	}
+	function register()
+	{
+	    if(document.getElementById("serviceProvider").checked)
+		{
+            document.getElementById("formRegister").action="/newProvider"
+            document.getElementById("formRegister").submit();
+		}
+		else
+		{
+            document.getElementById("formRegister").action="/newClient"
+            document.getElementById("formRegister").submit();
+		}
+	}
+	function validate()
+	{
+	    if(document.getElementById("serviceProvider").checked)
+		{
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    ////after completely getting the response
+                    if (this.responseText == 'false') {
+                        alert("Email already Registered")
+                    }
+                }
+            };
+            xmlhttp.open("GET", '/checkForRedundancyProvider?email=' + document.getElementById("emailID").value, true);
+            xmlhttp.send();
+		}
+		else
+		{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        ////after completely getting the response
+                        if (this.responseText == 'false') {
+                            alert("Email already Registered")
+                        }
+                    }
+                };
+                xmlhttp.open("GET", '/checkForRedundancy?email=' + document.getElementById("emailID").value, true);
+                xmlhttp.send();
+		}
+
+    }
+</script>

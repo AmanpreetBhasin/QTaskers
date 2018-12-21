@@ -1,0 +1,33 @@
+{
+  "name": "MinorProject_Code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "back.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.3.7",
+    "nodemailer": "^4.6.8",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^1.18.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node back.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmanpreetBhasin/MinorProject_Code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmanpreetBhasin/MinorProject_Code/issues"
+  },
+  "homepage": "https://github.com/AmanpreetBhasin/MinorProject_Code#readme"
+}
